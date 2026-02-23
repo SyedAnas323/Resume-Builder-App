@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Payment Success</title>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body style="text-align:center; padding:40px;">
+
+  <h1>Payment Successful 🎉</h1>
+  <button style="padding:10px; background:#2563eb; color:white; border:none; border-radius:5px; cursor:pointer;" onclick="downloadPDF()">Download Resume</button>
+
+  <div id="hidden" style="position:absolute; left:-9999px;"></div>
+
+  <script>
+   
+    (function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const sessionId = urlParams.get('session_id');
+
+      if (sessionId) {
+     
+        const token = {
+          value: sessionId,
+          expiry: Date.now() + 10 * 60 * 1000 
+        };
+        localStorage.setItem('paymentToken', JSON.stringify(token));
+        
+        window.history.replaceState({}, document.title, window.location.pathname);
+      } else {
+       
+        const tokenData = localStorage.getItem('paymentToken');
+        if (tokenData) {
+          const token = JSON.parse(tokenData);
+          if (Date.now() > token.expiry) {
+            localStorage.removeItem('paymentToken');
+            alert("Your payment session has expired. Please pay again.");
+            window.location.href = "index.html";
+          }
+          
+        } else {
+          
+          alert("Please complete payment first!");
+          window.location.href = "index.html";
+        }
+      }
+    })();
+
+    function downloadPDF() {
+      
+      const tokenData = localStorage.getItem('paymentToken');
+      if (!tokenData) {
+        alert("Payment verification failed. Please complete payment.");
+        window.location.href = "index.html";
+        return;
+      }
+
+      const token = JSON.parse(tokenData);
+      if (Date.now() > token.expiry) {
+        localStorage.removeItem('paymentToken');
+        alert("Your payment session has expired. Please pay again.");
+        window.location.href = "index.html";
+        return;
+      }
+
+      const html = localStorage.getItem("resumeHTML");
+      if (!html) {
+        alert("Please build your resume first!");
+        window.location.href = "index.html";
+        return;
+      }
+
+      document.getElementById("hidden").innerHTML = html;
+      const resume = document.querySelector("#hidden .resume-page");
+      if (!resume) {
+        alert("Resume element not found!");
+        return;
+      }
+
+      html2canvas(resume, { scale: 4, useCORS: true }).then(canvas => {
+        const imgData = canvas.toDataURL("image/png");
+        const pdf = new jspdf.jsPDF({ orientation: "p", unit: "mm", format: "a4" });
+        pdf.addImage(imgData, "PNG", 0, 0, 210, 297);
+        pdf.save("Professional-Resume.pdf");
+
+        localStorage.removeItem('resumeHTML');
+        localStorage.removeItem('paymentToken');
+
+        alert("Congratulations! Your resume has been downloaded successfully.");
+      }).catch(error => {
+        console.error(error);
+       
+        localStorage.removeItem('resumeHTML');
+        localStorage.removeItem('paymentToken');
+        alert("PDF generation failed.");
+      });
+    }
+  </script>
+</body>
+</html>

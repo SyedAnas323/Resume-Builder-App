@@ -1,0 +1,479 @@
+  /* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #f1f5f9;
+}
+
+.app {
+  width: 95%;
+  max-width: 1300px;
+  margin: 30px auto;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.form {
+  flex: 1 1 350px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.form button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.preview {
+  flex: 1 1 600px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.resume-page {
+  display: flex;
+  width: 49.625rem;
+  height: 70.125rem;
+  margin: auto;
+}
+.left {
+  width: 36%;
+  background: #1f2937;
+  color: white;
+  padding: 30px;
+}
+
+.right {
+  width: 100%;
+  
+  padding: 30px;
+  margin-right: 40px;
+}
+
+.profile-img img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.left h3 {
+  text-align: left;
+  margin: 30px 0 15px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding-bottom: 8px;
+}
+
+.left h3 i {
+  font-size: 1.2rem;
+  color: #9ca3af;
+}
+
+.right .section-title {
+  text-align: left;
+  margin: 30px 0 15px 0;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.3rem;
+}
+
+.right .section-title i {
+  font-size: 1.3rem;
+  color: #2563eb;
+}
+
+.contact-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  text-align: left;
+}
+
+.contact-list li i {
+  width: 20px;
+  color: #9ca3af;
+}
+
+#pSkills, #pLanguage {
+  list-style: none;
+  padding-left: 0;
+}
+
+#pSkills li, #pLanguage li {
+  background: rgba(255,255,255,0.1);
+  margin: 5px 0;
+  padding: 5px 10px;
+  border-radius: 4px;
+  text-align: left;
+}
+
+@media (max-width: 1100px) {
+  .resume-page {
+    transform: scale(0.75);
+    transform-origin: top center;
+  }
+}
+
+.right p,
+.right div,
+.right ul,
+.right li,
+.right .section-title {
+  text-align: left !important;
+}
+
+
+#pSummary, #pExperience, #pEducation, #pReference {
+  text-align: left;
+}
+
+#pSummary, #pExperience p, #pEducation p, #pReference p {
+  text-align: left;
+}
+
+ 
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #f1f5f9;
+}
+
+.app {
+  width: 95%;
+  max-width: 1300px;
+  margin: 30px auto;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.form {
+  flex: 1 1 350px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.form button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.preview {
+  flex: 1 1 600px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #f1f5f9;
+}
+
+.app {
+  width: 95%;
+  max-width: 1300px;
+  margin: 30px auto;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.form {
+  flex: 1 1 350px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.form button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.preview {
+  flex: 1 1 600px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.resume-page {
+  display: flex;
+  width: 49.625rem;  /* 794px / 16 = 49.625rem */
+  height: 70.125rem;  /* 1122px / 16 = 70.125rem */
+  margin: auto;
+}
+
+.left {
+  width: 36%;
+  background: #1f2937;
+  color: white;
+  padding: 30px;
+}
+
+.right {
+  width: 100%;
+  padding: 30px;
+  margin-right: 40px;
+}
+
+.profile-img img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.left h3 {
+  text-align: left;
+  margin: 30px 0 15px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding-bottom: 8px;
+}
+
+.left h3 i {
+  font-size: 1.2rem;
+  color: #9ca3af;
+}
+
+.right .section-title {
+  text-align: left;
+  margin: 30px 0 15px 0;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.3rem;
+}
+
+.right .section-title i {
+  font-size: 1.3rem;
+  color: #2563eb;
+}
+
+.contact-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  text-align: left;
+}
+
+.contact-list li i {
+  width: 20px;
+  color: #9ca3af;
+}
+
+#pSkills, #pLanguage {
+  list-style: none;
+  padding-left: 0;
+}
+
+#pSkills li, #pLanguage li {
+  background: rgba(255,255,255,0.1);
+  margin: 5px 0;
+  padding: 5px 10px;
+  border-radius: 4px;
+  text-align: left;
+}
+
+.right p,
+.right div,
+.right ul,
+.right li,
+.right .section-title {
+  text-align: left !important;
+}
+
+#pSummary, #pExperience, #pEducation, #pReference {
+  text-align: left;
+}
+
+#pSummary, #pExperience p, #pEducation p, #pReference p {
+  text-align: left;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* Tablet: 769px to 1024px */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+  }
+  .preview {
+    max-width: 100%;
+    overflow-x: auto;  /* Allow horizontal scroll if needed */
+  }
+  .resume-page {
+    transform: scale(0.85);
+    transform-origin: top center;
+  }
+}
+
+/* Mobile: up to 768px */
+@media (max-width: 768px) {
+  .app {
+    width: 100%;
+    margin: 15px auto;
+    padding: 0 10px;
+  }
+  .form {
+    padding: 15px;
+  }
+  .form input,
+  .form textarea,
+  .form button {
+    font-size: 16px;  /* Prevent zoom on mobile */
+  }
+  .preview {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .resume-page {
+    transform: scale(0.6);
+    transform-origin: top left;
+  }
+  .left, .right {
+    padding: 15px;
+  }
+  .left h3 {
+    font-size: 16px;
+    margin: 15px 0 8px;
+  }
+  .right .section-title {
+    font-size: 1.1rem;
+    margin: 15px 0 8px;
+  }
+  .profile-img img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* Very small phones (up to 480px) */
+@media (max-width: 480px) {
+  .resume-page {
+    transform: scale(0.5);
+    transform-origin: top left;
+  }
+  .left {
+    padding: 10px;
+  }
+  .right {
+    padding: 10px;
+    margin-right: 20px;
+  }
+  .left h3 {
+    font-size: 14px;
+    gap: 5px;
+  }
+  .contact-list li {
+    font-size: 12px;
+  }
+}

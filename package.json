@@ -1,0 +1,9 @@
+{
+  "name": "resume-maker",
+  "version": "1.0.0",
+  "description": "Resume Builder with Stripe Payment",
+  "type": "commonjs",
+  "dependencies": {
+    "stripe": "^20.3.1"
+  }
+}
