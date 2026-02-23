@@ -20,8 +20,8 @@ module.exports = async (req, res) => {
           quantity: 1,
         },
       ],
-      success_url: "https://yourproject.vercel.app/success.html?session_id={CHECKOUT_SESSION_ID}",
-      cancel_url: "https://yourproject.vercel.app/index.html",
+      success_url: "https://resume-builder-app-kohl-phi.vercel.app/success.html?session_id={CHECKOUT_SESSION_ID}",
+cancel_url: "https://resume-builder-app-kohl-phi.vercel.app/index.html",
     });
 
     res.status(200).json({ id: session.id });

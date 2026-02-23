@@ -204,8 +204,10 @@ async function startPayment() {
   saveResume();
 
   try {
-    const response = await fetch("http://localhost:4242/create-checkout-session", {
-      method: "POST"
+    // const response = await fetch("http://localhost:4242/create-checkout-session", {
+    //   method: "POST"
+    // });
+    const response = await fetch("/api/create-checkout-session", { method: "POST" 
     });
     const session = await response.json();
     await stripe.redirectToCheckout({ sessionId: session.id });
