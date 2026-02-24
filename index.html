@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -7,7 +7,7 @@
 
   <link rel="stylesheet" href="style.css">
 
-  <!-- Font Awesome Icons -->
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
   <script src="https://js.stripe.com/v3/"></script>
@@ -19,7 +19,7 @@
 
     <div class="container">
 
-      <!-- ================= FORM SECTION ================= -->
+  
       <div class="form">
 
         <h3><i class="fa-solid fa-user"></i> Personal Information</h3>
@@ -66,6 +66,151 @@
         <input id="refEmail" placeholder="Reference Email">
         <input id="refPhone" placeholder="Reference Phone">
 
+
+        <button onclick="generatePreview()">
+          <i class="fa-solid fa-eye"></i> Generate Preview
+        </button>
+
+        <button onclick="startPayment()">
+          <i class="fa-solid fa-download"></i> Download Resume
+        </button>
+
+      </div>
+
+
+      <div class="preview">
+        <div class="resume-page" id="resume">
+
+          <div class="left">
+
+            <div class="profile-img">
+              <img id="pImage" src="">
+            </div>
+
+            <h1 id="pName">Your Name</h1>
+
+            <h3><i class="fa-solid fa-address-book"></i> CONTACT</h3>
+            <ul class="contact-list">
+              <li><i class="fa-solid fa-envelope"></i> <span id="pEmail"></span></li>
+              <li><i class="fa-solid fa-phone"></i> <span id="pPhone"></span></li>
+              <li><i class="fa-solid fa-location-dot"></i> <span id="pLocation"></span></li>
+            </ul>
+
+            <h3><i class="fa-solid fa-lightbulb"></i> SKILLS</h3>
+            <ul id="pSkills"></ul>
+
+            <h3><i class="fa-solid fa-earth-asia"></i> LANGUAGES</h3>
+            <ul id="pLanguage"></ul>
+
+          </div>
+
+        
+          <div class="right">
+
+            <h2 class="section-title">
+              <i class="fa-solid fa-user"></i> SUMMARY
+            </h2>
+            <p id="pAbout"></p>
+
+            <h2 class="section-title">
+              <i class="fa-solid fa-briefcase"></i> WORK EXPERIENCE
+            </h2>
+            <div id="pExperience"></div>
+
+            <h2 class="section-title">
+              <i class="fa-solid fa-graduation-cap"></i> EDUCATION
+            </h2>
+            <div id="pEducation"></div>
+
+            <h2 class="section-title">
+              <i class="fa-solid fa-address-card"></i> REFERENCES
+            </h2>
+            <div id="pReference"></div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Professional Resume Builder</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <script src="https://js.stripe.com/v3/"></script>
+</head>
+
+<body>
+  <div class="app">
+    <h2><i class="fa-solid fa-file-lines"></i> Resume Builder</h2>
+
+    <div class="container">
+
+      <!-- ================= FORM SECTION ================= -->
+      <div class="form">
+
+        <h3><i class="fa-solid fa-user"></i> Personal Information</h3>
+
+        <input type="file" id="imageUpload" accept="image/*">
+
+        <input id="name" placeholder="Full Name">
+        <input id="email" placeholder="Email">
+        <input id="phone" placeholder="Phone">
+        <input id="location" placeholder="Location">
+        <textarea id="about" placeholder="About Me"></textarea>
+
+        <!-- ===== SKILLS WITH BUTTON ===== -->
+        <h3><i class="fa-solid fa-lightbulb"></i> Skills</h3>
+        <input type="text" id="skillInput" placeholder="Type a skill">
+        <button type="button" onclick="addSkill()">
+          <i class="fa-solid fa-plus"></i> Add Skill
+        </button>
+
+        <!-- ===== LANGUAGES WITH BUTTON ===== -->
+        <h3><i class="fa-solid fa-earth-asia"></i> Languages</h3>
+        <input type="text" id="languageInput" placeholder="Type a language">
+        <button type="button" onclick="addLanguage()">
+          <i class="fa-solid fa-plus"></i> Add Language
+        </button>
+
+        <h3><i class="fa-solid fa-briefcase"></i> Add Experience</h3>
+        <input id="expTitle" placeholder="Job Title">
+        <input id="expCompany" placeholder="Company">
+        <input id="expStart" placeholder="Start Year">
+        <input id="expEnd" placeholder="End Year">
+        <textarea id="expDesc" placeholder="Job Description"></textarea>
+        <button type="button" onclick="addExperience()">
+          <i class="fa-solid fa-plus"></i> Add Experience
+        </button>
+
+        <h3><i class="fa-solid fa-graduation-cap"></i> Add Education</h3>
+        <input id="eduDegree" placeholder="Degree">
+        <input id="eduInstitute" placeholder="Institute">
+        <input id="eduStart" placeholder="Start Year">
+        <input id="eduEnd" placeholder="End Year">
+        <button type="button" onclick="addEducation()">
+          <i class="fa-solid fa-plus"></i> Add Education
+        </button>
+
+        <h3><i class="fa-solid fa-address-card"></i> Reference</h3>
+        <input id="refName" placeholder="Reference Name">
+        <input id="refEmail" placeholder="Reference Email">
+        <input id="refPhone" placeholder="Reference Phone">
 
         <button onclick="generatePreview()">
           <i class="fa-solid fa-eye"></i> Generate Preview
