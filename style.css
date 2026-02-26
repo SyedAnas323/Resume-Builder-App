@@ -281,6 +281,7 @@ body {
   font-size: 18px;
   font-weight: 400;
   margin-top: 10px;
+  text-align: left;
 
 }
 
@@ -288,11 +289,12 @@ body {
   font-size: 14px;
   margin-top: 3px;
   color: #dcdcdc;
+  text-align: left;
 }
 .tagline {
   font-size: 0.7rem;
   margin-top: 1px;
- 
+  text-align: left;
   font-style: italic;
 }
 
@@ -301,6 +303,7 @@ body {
   gap: 6px;
   margin-top: 5px;
   font-size: 0.6rem;
+  text-align: left;
   
 }
 .profile-header {
