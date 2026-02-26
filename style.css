@@ -242,6 +242,10 @@ body {
 
 body {
   background: #f1f5f9;
+  background-image: url('Background\ img.png');
+  background-repeat: no-repeat;      
+  background-size: cover;            
+  background-position: center; 
 }
 
 .app {
@@ -273,6 +277,36 @@ body {
   border: 1px solid #ccc;
 }
 
+#pTagline {
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 10px;
+
+}
+
+#pAddress {
+  font-size: 14px;
+  margin-top: 3px;
+  color: #dcdcdc;
+}
+.tagline {
+  font-size: 0.7rem;
+  margin-top: 1px;
+ 
+  font-style: italic;
+}
+
+.address-line {
+  display: flex;
+  gap: 6px;
+  margin-top: 5px;
+  font-size: 0.6rem;
+  
+}
+.profile-header {
+ margin-bottom: 20px;
+}
+
 .form button {
   width: 100%;
   padding: 12px;
@@ -283,7 +317,9 @@ body {
   border-radius: 6px;
   cursor: pointer;
 }
-
+.h3{
+  padding-top: 1.5rem;
+}
 .preview {
   flex: 1 1 600px;
   background: white;

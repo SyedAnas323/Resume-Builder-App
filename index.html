@@ -155,7 +155,7 @@
   <script src="https://js.stripe.com/v3/"></script>
 </head>
 
-<body>
+<body >
   <div class="app">
     <h2><i class="fa-solid fa-file-lines"></i> Resume Builder</h2>
 
@@ -167,28 +167,30 @@
         <h3><i class="fa-solid fa-user"></i> Personal Information</h3>
 
         <input type="file" id="imageUpload" accept="image/*">
-
         <input id="name" placeholder="Full Name">
+
+        <input type="text" id="tagline" placeholder="Your Title (e.g. Full Stack Developer)">
+        <input type="text" id="address" placeholder="Your Address">
         <input id="email" placeholder="Email">
         <input id="phone" placeholder="Phone">
         <input id="location" placeholder="Location">
         <textarea id="about" placeholder="About Me"></textarea>
 
         <!-- ===== SKILLS WITH BUTTON ===== -->
-        <h3><i class="fa-solid fa-lightbulb"></i> Skills</h3>
+        <h3 class="h3"><i class="fa-solid fa-lightbulb"></i> Skills</h3>
         <input type="text" id="skillInput" placeholder="Type a skill">
         <button type="button" onclick="addSkill()">
           <i class="fa-solid fa-plus"></i> Add Skill
         </button>
 
         <!-- ===== LANGUAGES WITH BUTTON ===== -->
-        <h3><i class="fa-solid fa-earth-asia"></i> Languages</h3>
+        <h3 class="h3"><i class="fa-solid fa-earth-asia"></i> Languages</h3>
         <input type="text" id="languageInput" placeholder="Type a language">
         <button type="button" onclick="addLanguage()">
           <i class="fa-solid fa-plus"></i> Add Language
         </button>
 
-        <h3><i class="fa-solid fa-briefcase"></i> Add Experience</h3>
+        <h3 class="h3"><i class="fa-solid fa-briefcase"></i> Add Experience</h3>
         <input id="expTitle" placeholder="Job Title">
         <input id="expCompany" placeholder="Company">
         <input id="expStart" placeholder="Start Year">
@@ -198,7 +200,7 @@
           <i class="fa-solid fa-plus"></i> Add Experience
         </button>
 
-        <h3><i class="fa-solid fa-graduation-cap"></i> Add Education</h3>
+        <h3 class="h3"><i class="fa-solid fa-graduation-cap"></i> Add Education</h3>
         <input id="eduDegree" placeholder="Degree">
         <input id="eduInstitute" placeholder="Institute">
         <input id="eduStart" placeholder="Start Year">
@@ -207,7 +209,7 @@
           <i class="fa-solid fa-plus"></i> Add Education
         </button>
 
-        <h3><i class="fa-solid fa-address-card"></i> Reference</h3>
+        <h3 class="h3"><i class="fa-solid fa-address-card"></i> Reference</h3>
         <input id="refName" placeholder="Reference Name">
         <input id="refEmail" placeholder="Reference Email">
         <input id="refPhone" placeholder="Reference Phone">
@@ -234,6 +236,12 @@
             </div>
 
             <h1 id="pName">Your Name</h1>
+            
+              <div class="profile-header">
+                <h3 id="pTagline"></h3>
+                <p id="pAddress"></p>
+              </div>
+
 
             <h3><i class="fa-solid fa-address-book"></i> CONTACT</h3>
             <ul class="contact-list">
