@@ -521,3 +521,18 @@ body {
     font-size: 12px;
   }
 }
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+.portfolio-heading {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.portfolio-heading i {
+  margin-right: 6px;
+}

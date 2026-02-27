@@ -170,6 +170,11 @@
         <input id="name" placeholder="Full Name">
 
         <input type="text" id="tagline" placeholder="Your Title (e.g. Full Stack Developer)">
+        <!-- ===== TAGLINE DROPDOWN ===== -->
+          <select id="titleDropdown" style="display:none; margin-bottom:10px;">
+            <option value="">Select Suggested Title</option>
+          </select>
+
         <input type="text" id="address" placeholder="Your Address">
         <input id="email" placeholder="Email">
         <input id="phone" placeholder="Phone">
@@ -179,6 +184,10 @@
         <!-- ===== SKILLS WITH BUTTON ===== -->
         <h3 class="h3"><i class="fa-solid fa-lightbulb"></i> Skills</h3>
         <input type="text" id="skillInput" placeholder="Type a skill">
+
+        <!-- ===== SKILLS DROPDOWN ===== -->
+        <select id="skillsDropdown" style="display:none; margin-bottom:10px;"></select>
+
         <button type="button" onclick="addSkill()">
           <i class="fa-solid fa-plus"></i> Add Skill
         </button>
@@ -186,9 +195,19 @@
         <!-- ===== LANGUAGES WITH BUTTON ===== -->
         <h3 class="h3"><i class="fa-solid fa-earth-asia"></i> Languages</h3>
         <input type="text" id="languageInput" placeholder="Type a language">
+
+        <!-- ===== LANGUAGE DROPDOWN ===== -->
+        <select id="languageDropdown" style="display:none; margin-bottom:10px;"></select>
+
+
         <button type="button" onclick="addLanguage()">
           <i class="fa-solid fa-plus"></i> Add Language
         </button>
+
+        <label for="portfolioInput">Portfolio Link</label>
+<input type="url" id="portfolioInput" placeholder="https://yourportfolio.com">
+
+
 
         <h3 class="h3"><i class="fa-solid fa-briefcase"></i> Add Experience</h3>
         <input id="expTitle" placeholder="Job Title">
@@ -255,6 +274,13 @@
 
             <h3><i class="fa-solid fa-earth-asia"></i> LANGUAGES</h3>
             <ul id="pLanguage"></ul>
+
+<div id="portfolioSection" style="display: none;">
+  <h3 class="portfolio-heading">
+    <i class="fas fa-globe"></i> Portfolio
+  </h3>
+  <a id="portfolioLink" href="#" target="_blank"></a>
+</div>
 
           </div>
 
