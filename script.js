@@ -155,15 +155,9 @@ function autoFillData(title) {
 function renderSkills() {
   pSkills.innerHTML = "";
 
-  skillsArray.forEach((skill, index) => {
+  skillsArray.forEach(skill => {
     const li = document.createElement("li");
-    li.innerHTML = `
-      ${skill} 
-      <span class="no-print">
-        <button onclick="editSkill(${index})">✏</button>
-        <button onclick="removeSkill(${index})">❌</button>
-      </span>
-    `;
+    li.textContent = skill; // ❌ no buttons here
     pSkills.appendChild(li);
   });
 
@@ -173,21 +167,14 @@ function renderSkills() {
 function renderLanguage() {
   pLanguage.innerHTML = "";
 
-  languageArray.forEach((lang, index) => {
+  languageArray.forEach(lang => {
     const li = document.createElement("li");
-    li.innerHTML = `
-      ${lang} 
-      <span class="no-print">
-        <button onclick="editLanguage(${index})">✏</button>
-        <button onclick="removeLanguage(${index})">❌</button>
-      </span>
-    `;
+    li.textContent = lang; // ❌ no buttons here
     pLanguage.appendChild(li);
   });
 
   saveResume();
 }
-
 
 taglineInput.addEventListener("input", function() {
   const title = this.value.trim();
@@ -542,29 +529,29 @@ taglineInput.addEventListener("input", function() {
   }
 });
 
-function autoFillData(title){
-  const data = jobData[title];
+// function autoFillData(title){
+//   const data = jobData[title];
 
-  pSkills.innerHTML="";
-  pLanguage.innerHTML="";
+//   pSkills.innerHTML="";
+//   pLanguage.innerHTML="";
 
-  data.skills.forEach(skill=>{
-    const li=document.createElement("li");
-    li.textContent=skill;
-    pSkills.appendChild(li);
-  });
+//   data.skills.forEach(skill=>{
+//     const li=document.createElement("li");
+//     li.textContent=skill;
+//     pSkills.appendChild(li);
+//   });
 
-  data.languages.forEach(lang=>{
-    const li=document.createElement("li");
-    li.textContent=lang;
-    pLanguage.appendChild(li);
-  });
+//   data.languages.forEach(lang=>{
+//     const li=document.createElement("li");
+//     li.textContent=lang;
+//     pLanguage.appendChild(li);
+//   });
 
-  aboutInput.value=data.about;
-  pAbout.textContent=data.about;
+//   aboutInput.value=data.about;
+//   pAbout.textContent=data.about;
 
-  generatePreview();
-}
+//   generatePreview();
+// }
 
 function showTitleSuggestions(text){
   titleDropdown.innerHTML='<option value="">Select Suggested Title</option>';
@@ -598,4 +585,109 @@ function saveResume() {
   localStorage.setItem("resumeHTML", document.getElementById("resume").outerHTML);
 }
 
+/* =====================================
+   EDITABLE FORM SKILLS + LANGUAGE
+===================================== */
 
+const formSkillsContainer = document.getElementById("formSkills");
+const formLanguageContainer = document.getElementById("formLanguages");
+
+/* ===== Sync From Resume To Form ===== */
+function syncSkillsToForm() {
+  formSkillsContainer.innerHTML = "";
+
+  skillsArray.forEach((skill, index) => {
+    const div = document.createElement("div");
+    div.className = "form-item";
+
+    div.innerHTML = `
+      ${skill}
+      <button onclick="editSkillForm(${index})">✏</button>
+      <button onclick="deleteSkillForm(${index})">❌</button>
+    `;
+
+    formSkillsContainer.appendChild(div);
+  });
+}
+
+function syncLanguagesToForm() {
+  formLanguageContainer.innerHTML = "";
+
+  languageArray.forEach((lang, index) => {
+    const div = document.createElement("div");
+    div.className = "form-item";
+
+    div.innerHTML = `
+      ${lang}
+      <button onclick="editLanguageForm(${index})">✏</button>
+      <button onclick="deleteLanguageForm(${index})">❌</button>
+    `;
+
+    formLanguageContainer.appendChild(div);
+  });
+}
+
+/* ===== Edit/Delete From Form ===== */
+function editSkillForm(index) {
+  const updated = prompt("Edit Skill:", skillsArray[index]);
+  if (updated) {
+    skillsArray[index] = updated;
+    renderSkills();
+    syncSkillsToForm();
+  }
+}
+
+function deleteSkillForm(index) {
+  skillsArray.splice(index, 1);
+  renderSkills();
+  syncSkillsToForm();
+}
+
+function editLanguageForm(index) {
+  const updated = prompt("Edit Language:", languageArray[index]);
+  if (updated) {
+    languageArray[index] = updated;
+    renderLanguage();
+    syncLanguagesToForm();
+  }
+}
+
+function deleteLanguageForm(index) {
+  languageArray.splice(index, 1);
+  renderLanguage();
+  syncLanguagesToForm();
+}
+
+/* ===== Add New From Form ===== */
+function addSkill() {
+  const value = skillInput.value.trim();
+  if (value && !skillsArray.includes(value)) {
+    skillsArray.push(value);
+    skillInput.value = "";
+    renderSkills();
+    syncSkillsToForm();
+  }
+}
+
+function addLanguage() {
+  const value = languageInput.value.trim();
+  if (value && !languageArray.includes(value)) {
+    languageArray.push(value);
+    languageInput.value = "";
+    renderLanguage();
+    syncLanguagesToForm();
+  }
+}
+
+/* ===== Override render to sync ===== */
+const oldRenderSkills = renderSkills;
+renderSkills = function() {
+  oldRenderSkills();
+  syncSkillsToForm();
+};
+
+const oldRenderLanguage = renderLanguage;
+renderLanguage = function() {
+  oldRenderLanguage();
+  syncLanguagesToForm();
+};
