@@ -130,6 +130,100 @@ document.getElementById("imageUpload").addEventListener("change", function(e) {
 //    EDITABLE SKILL & LANGUAGE SYSTEM
 // =========================== */
 
+// function autoFillData(title) {
+//   const data = jobData[title];
+
+//   // Add only new skills (avoid duplicates)
+//   data.skills.forEach(skill => {
+//     if (!skillsArray.includes(skill)) skillsArray.push(skill);
+//   });
+
+//   // Add only new languages
+//   data.languages.forEach(lang => {
+//     if (!languageArray.includes(lang)) languageArray.push(lang);
+//   });
+
+//   // Update about section
+//   aboutInput.value = data.about;
+//   pAbout.textContent = data.about;
+
+//   // Render everything with buttons
+//   renderSkills();
+//   renderLanguage();
+// }
+
+// function renderSkills() {
+//   pSkills.innerHTML = "";
+
+//   skillsArray.forEach((skill, index) => {
+//     const li = document.createElement("li");
+//     li.innerHTML = `
+//       ${skill} 
+//       <span class="no-print">
+//         <button onclick="editSkill(${index})">✏</button>
+//         <button onclick="removeSkill(${index})">❌</button>
+//       </span>
+//     `;
+//     pSkills.appendChild(li);
+//   });
+
+//   saveResume();
+// }
+
+// function renderLanguage() {
+//   pLanguage.innerHTML = "";
+
+//   languageArray.forEach((lang, index) => {
+//     const li = document.createElement("li");
+//     li.innerHTML = `
+//       ${lang} 
+//       <span class="no-print">
+//         <button onclick="editLanguage(${index})">✏</button>
+//         <button onclick="removeLanguage(${index})">❌</button>
+//       </span>
+//     `;
+//     pLanguage.appendChild(li);
+//   });
+
+//   saveResume();
+// }
+
+
+// taglineInput.addEventListener("input", function() {
+//   const title = this.value.trim();
+
+//   if (jobData[title]) {
+//     autoFillData(title);
+//   } else {
+//     showTitleSuggestions(title);
+//   }
+// });
+
+// function showTitleSuggestions(text) {
+//   titleDropdown.innerHTML = '<option value="">Select Suggested Title</option>';
+//   const matches = Object.keys(jobData).filter(t => t.toLowerCase().includes(text.toLowerCase()));
+
+//   if (matches.length > 0) {
+//     titleDropdown.style.display = "block";
+//     matches.forEach(match => {
+//       const option = document.createElement("option");
+//       option.value = match;
+//       option.textContent = match;
+//       titleDropdown.appendChild(option);
+//     });
+//   } else {
+//     titleDropdown.style.display = "none";
+//   }
+// }
+
+// titleDropdown.addEventListener("change", function() {
+//   if (this.value) {
+//     taglineInput.value = this.value;
+//     autoFillData(this.value);
+//     this.style.display = "none";
+//   }
+// });
+
 function autoFillData(title) {
   const data = jobData[title];
 
@@ -152,42 +246,155 @@ function autoFillData(title) {
   renderLanguage();
 }
 
+// function renderSkills() {
+//   pSkills.innerHTML = "";
+
+//   skillsArray.forEach((skill, index) => {
+//     const li = document.createElement("li");
+
+//     li.innerHTML = `
+//       <span>${skill}</span>
+//       <span class="no-print">
+//         <button onclick="editSkill(${index})">✏</button>
+//         <button onclick="removeSkill(${index})">❌</button>
+//       </span>
+//     `;
+
+//     pSkills.appendChild(li);
+//   });
+
+//   saveResume();
+// }
+
+
 function renderSkills() {
   pSkills.innerHTML = "";
 
   skillsArray.forEach((skill, index) => {
     const li = document.createElement("li");
+
+    li.className = "skill-item";
+
     li.innerHTML = `
-      ${skill} 
-      <span class="no-print">
+      <span class="skill-text">${skill}</span>
+      <div class="skill-actions no-print">
         <button onclick="editSkill(${index})">✏</button>
         <button onclick="removeSkill(${index})">❌</button>
-      </span>
+      </div>
     `;
+
     pSkills.appendChild(li);
   });
 
   saveResume();
 }
 
+function addSkill() {
+  const input = document.getElementById("skillInput");
+  const value = input.value.trim();
+
+  if (value !== "" && !skillsArray.includes(value)) {
+    skillsArray.push(value);
+    renderSkills();
+    input.value = "";
+  }
+}
+
+// function renderLanguage() {
+//   pLanguage.innerHTML = "";
+
+//   languageArray.forEach((lang, index) => {
+//     const li = document.createElement("li");
+
+//     li.innerHTML = `
+//       <span>${lang}</span>
+//       <span class="no-print">
+//         <button onclick="editLanguage(${index})">✏</button>
+//         <button onclick="removeLanguage(${index})">❌</button>
+//       </span>
+//     `;
+
+//     pLanguage.appendChild(li);
+//   });
+
+//   saveResume();
+// }
+
 function renderLanguage() {
   pLanguage.innerHTML = "";
 
   languageArray.forEach((lang, index) => {
     const li = document.createElement("li");
+
+    li.className = "skill-item";
+
     li.innerHTML = `
-      ${lang} 
-      <span class="no-print">
+      <span class="skill-text">${lang}</span>
+      <div class="skill-actions no-print">
         <button onclick="editLanguage(${index})">✏</button>
         <button onclick="removeLanguage(${index})">❌</button>
-      </span>
+      </div>
     `;
+
     pLanguage.appendChild(li);
   });
 
   saveResume();
 }
 
+function addLanguage() {
+  const input = document.getElementById("languageInput");
+  const value = input.value.trim();
+
+  if (value !== "" && !languageArray.includes(value)) {
+    languageArray.push(value);
+    renderLanguage();
+    input.value = "";
+  }
+}
+/* ============================= */
+/* ===== ADDITION START ======== */
+/* ============================= */
+
+// Edit Skill
+function editSkill(index) {
+  const updatedSkill = prompt("Edit Skill:", skillsArray[index]);
+
+  if (updatedSkill && updatedSkill.trim() !== "") {
+    skillsArray[index] = updatedSkill.trim();
+    renderSkills();
+  }
+}
+
+// Remove Skill
+function removeSkill(index) {
+  if (confirm("Remove this skill?")) {
+    skillsArray.splice(index, 1);
+    renderSkills();
+  }
+}
+
+// Edit Language
+function editLanguage(index) {
+  const updatedLang = prompt("Edit Language:", languageArray[index]);
+
+  if (updatedLang && updatedLang.trim() !== "") {
+    languageArray[index] = updatedLang.trim();
+    renderLanguage();
+  }
+}
+
+// Remove Language
+function removeLanguage(index) {
+  if (confirm("Remove this language?")) {
+    languageArray.splice(index, 1);
+    renderLanguage();
+  }
+}
+
+/* ============================= */
+/* ===== ADDITION END ========== */
+/* ============================= */
 
 taglineInput.addEventListener("input", function() {
   const title = this.value.trim();
@@ -201,16 +408,21 @@ taglineInput.addEventListener("input", function() {
 
 function showTitleSuggestions(text) {
   titleDropdown.innerHTML = '<option value="">Select Suggested Title</option>';
-  const matches = Object.keys(jobData).filter(t => t.toLowerCase().includes(text.toLowerCase()));
+
+  const matches = Object.keys(jobData).filter(t =>
+    t.toLowerCase().includes(text.toLowerCase())
+  );
 
   if (matches.length > 0) {
     titleDropdown.style.display = "block";
+
     matches.forEach(match => {
       const option = document.createElement("option");
       option.value = match;
       option.textContent = match;
       titleDropdown.appendChild(option);
     });
+
   } else {
     titleDropdown.style.display = "none";
   }
@@ -223,7 +435,6 @@ titleDropdown.addEventListener("change", function() {
     this.style.display = "none";
   }
 });
-
 /* ===========================
    portfolio 
    =========================== */
@@ -542,29 +753,29 @@ taglineInput.addEventListener("input", function() {
   }
 });
 
-function autoFillData(title){
-  const data = jobData[title];
+// function autoFillData(title){
+//   const data = jobData[title];
 
-  pSkills.innerHTML="";
-  pLanguage.innerHTML="";
+//   pSkills.innerHTML="";
+//   pLanguage.innerHTML="";
 
-  data.skills.forEach(skill=>{
-    const li=document.createElement("li");
-    li.textContent=skill;
-    pSkills.appendChild(li);
-  });
+//   data.skills.forEach(skill=>{
+//     const li=document.createElement("li");
+//     li.textContent=skill;
+//     pSkills.appendChild(li);
+//   });
 
-  data.languages.forEach(lang=>{
-    const li=document.createElement("li");
-    li.textContent=lang;
-    pLanguage.appendChild(li);
-  });
+//   data.languages.forEach(lang=>{
+//     const li=document.createElement("li");
+//     li.textContent=lang;
+//     pLanguage.appendChild(li);
+//   });
 
-  aboutInput.value=data.about;
-  pAbout.textContent=data.about;
+//   aboutInput.value=data.about;
+//   pAbout.textContent=data.about;
 
-  generatePreview();
-}
+//   generatePreview();
+// }
 
 function showTitleSuggestions(text){
   titleDropdown.innerHTML='<option value="">Select Suggested Title</option>';
