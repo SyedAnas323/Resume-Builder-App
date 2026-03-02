@@ -519,15 +519,15 @@ const jobData = {
 //    AUTO SYSTEM
 // ============================== */
 
-taglineInput.addEventListener("input", function() {
-  const title = this.value.trim();
+// taglineInput.addEventListener("input", function() {
+//   const title = this.value.trim();
 
-  if (jobData[title]) {
-    autoFillData(title);
-  } else {
-    showTitleSuggestions(title);
-  }
-});
+//   if (jobData[title]) {
+//     autoFillData(title);
+//   } else {
+//     showTitleSuggestions(title);
+//   }
+// });
 
 // function autoFillData(title){
 //   const data = jobData[title];
@@ -553,30 +553,59 @@ taglineInput.addEventListener("input", function() {
 //   generatePreview();
 // }
 
-function showTitleSuggestions(text){
-  titleDropdown.innerHTML='<option value="">Select Suggested Title</option>';
-  const matches=Object.keys(jobData).filter(t=>t.toLowerCase().includes(text.toLowerCase()));
+// function showTitleSuggestions(text){
+//   titleDropdown.innerHTML='<option value="">Select Suggested Title</option>';
+//   const matches=Object.keys(jobData).filter(t=>t.toLowerCase().includes(text.toLowerCase()));
 
-  if(matches.length>0){
-    titleDropdown.style.display="block";
-    matches.forEach(match=>{
-      const option=document.createElement("option");
-      option.value=match;
-      option.textContent=match;
-      titleDropdown.appendChild(option);
-    });
-  }else{
-    titleDropdown.style.display="none";
+//   if(matches.length>0){
+//     titleDropdown.style.display="block";
+//     matches.forEach(match=>{
+//       const option=document.createElement("option");
+//       option.value=match;
+//       option.textContent=match;
+//       titleDropdown.appendChild(option);
+//     });
+//   }else{
+//     titleDropdown.style.display="none";
+//   }
+// }
+
+// titleDropdown.addEventListener("change",function(){
+//   if(this.value){
+//     taglineInput.value=this.value;
+//     autoFillData(this.value);
+//     this.style.display="none";
+//   }
+// });
+
+function autoFillData(title) {
+  const data = jobData[title];
+
+  // 🔥 PURANI CHEEZEIN CLEAR KAR DO
+  skillsArray = [];
+  languageArray = [];
+
+  // 🔥 NEW DATA ADD KARO
+  skillsArray = [...data.skills];
+  languageArray = [...data.languages];
+
+  // About update
+  aboutInput.value = data.about;
+  pAbout.textContent = data.about;
+
+  // Re-render everything
+  renderSkills();
+  renderLanguage();
+
+  // Form area bhi update ho
+  if (typeof syncSkillsToForm === "function") {
+    syncSkillsToForm();
+  }
+
+  if (typeof syncLanguagesToForm === "function") {
+    syncLanguagesToForm();
   }
 }
-
-titleDropdown.addEventListener("change",function(){
-  if(this.value){
-    taglineInput.value=this.value;
-    autoFillData(this.value);
-    this.style.display="none";
-  }
-});
 
 // /* ===========================
 //    SAVE
