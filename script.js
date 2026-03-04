@@ -80,16 +80,34 @@ function fitContentToPage() {
 /* ===========================
    LIVE PREVIEW
 =========================== */
-function generatePreview() {
-  pName.textContent = nameInput.value || "Your Name";
-  pTagline.textContent = taglineInput.value || "";
-  pAddress.textContent = addressInput.value || "";
-  pEmail.textContent = emailInput.value || "";
-  pPhone.textContent = phoneInput.value || "";
-  pLocation.textContent = locationInput.value || "";
-  pAbout.textContent = aboutInput.value || "";
 
-  pReference.innerHTML = `
+
+
+// function generatePreview() {
+function generatePreview() {
+
+  document.getElementById("pName").innerText =
+    document.getElementById("name").value || "Your Name";
+
+  document.getElementById("pTagline").innerText =
+    document.getElementById("tagline").value || "";
+
+  document.getElementById("pAddress").innerText =
+    document.getElementById("address").value || "";
+
+  document.getElementById("pEmail").innerText =
+    document.getElementById("email").value || "";
+
+  document.getElementById("pPhone").innerText =
+    document.getElementById("phone").value || "";
+
+  document.getElementById("pLocation").innerText =
+    document.getElementById("location").value || "";
+
+  document.getElementById("pAbout").innerText =
+    document.getElementById("about").value || "";
+
+  document.getElementById("pReference").innerHTML = `
     <strong>${refName.value || ""}</strong><br>
     ${refEmail.value || ""}<br>
     ${refPhone.value || ""}
@@ -97,6 +115,25 @@ function generatePreview() {
 
   saveResume();
 }
+//     pName.textContent = nameInput.value || "Your Name";
+//   pTagline.textContent = taglineInput.value || "";
+//   pAddress.textContent = addressInput.value || "";
+//   pEmail.textContent = emailInput.value || "";
+//   pPhone.textContent = phoneInput.value || "";
+//   pLocation.textContent = locationInput.value || "";
+//   pAbout.textContent = aboutInput.value || "";
+
+//   pReference.innerHTML = `
+//     <strong>${refName.value || ""}</strong><br>
+//     ${refEmail.value || ""}<br>
+//     ${refPhone.value || ""}
+//   `;
+
+//   saveResume();
+
+  
+
+// }
 
 document.querySelectorAll(
   "#name, #tagline, #address, #email, #phone, #location, #about, #refName, #refEmail, #refPhone"
@@ -578,6 +615,11 @@ const jobData = {
 //   }
 // });
 
+
+
+
+
+  
 function autoFillData(title) {
   const data = jobData[title];
 
@@ -720,3 +762,21 @@ renderLanguage = function() {
   oldRenderLanguage();
   syncLanguagesToForm();
 };
+
+
+
+/* TEMPLATE SWITCH SYSTEM */
+
+const templateBtn = document.getElementById("templateBtn");
+const templateSelector = document.getElementById("templateSelector");
+const resume = document.getElementById("resume");
+
+templateBtn.addEventListener("click", () => {
+  templateSelector.style.display =
+    templateSelector.style.display === "none" ? "block" : "none";
+});
+
+templateSelector.addEventListener("change", function () {
+  resume.classList.remove("template1", "template2", "template3", "template4");
+  resume.classList.add(this.value);
+});

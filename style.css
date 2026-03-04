@@ -547,3 +547,184 @@ body {
   margin-left:6px;
   cursor:pointer;
 }
+/* temp 2 */
+.template2 .left {
+  background: #03224e;
+  color: white;
+}
+
+.template2 .right {
+  background: white;
+}
+
+.template2 .left h3 {
+  border-bottom: 1px solid #ccc;
+}
+
+.template2 #pSkills li,
+.template2 #pLanguage li {
+  background: #e2e8f0;
+  color: #111;
+}
+/* temp 3 */
+
+.template3 .left {
+  background: #02493d;
+  color: white;
+}
+
+.template3 .right {
+  background: #f1f5f9;
+}
+
+.template3 .section-title {
+  color: #1e3a8a;
+  border-bottom: 2px solid #1e3a8a;
+}
+
+.template3 #pSkills li,
+.template3 #pLanguage li {
+  background: rgba(255,255,255,0.2);
+}
+
+/* ================= TEMPLATE 4 - PROFESSIONAL CORPORATE CLEAN ================= */
+
+.template4 {
+  background: #ffffff;
+  color: #1e293b;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  padding: 70px 80px;
+  display: block;
+}
+
+/* Remove photo */
+.template4 .profile-img {
+  display: none;
+}
+
+/* Remove skills & languages */
+.template4 #pSkills,
+.template4 #pLanguage,
+.template4 #pSkills li,
+.template4 #pLanguage li {
+  display: none !important;
+}
+
+/* Remove contact heading */
+.template4 .left h3 {
+  display: none;
+}
+
+/* Remove left/right layout */
+.template4 .left,
+.template4 .right {
+  width: 100%;
+  padding: 0;
+  background: transparent;
+  color: #1e293b;
+}
+
+/* ===== HEADER DESIGN ===== */
+
+.template4 #pName {
+  text-align: center;
+  font-size: 38px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  color: #0f172a;
+}
+
+.template4 #pTagline {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+
+.template4 #pAddress {
+  text-align: center;
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 20px;
+}
+
+/* ===== CONTACT ROW ===== */
+
+.template4 .contact-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+  
+  font-size: 14px;
+  border-bottom: 1px solid #cbd5e1;
+  padding-bottom: 15px;
+
+}
+
+
+/* Hide location icon only */
+.template4 .contact-list li i.fa-location-dot {
+  display: none;
+}
+
+/* Keep email & phone icons styled */
+.template4 .contact-list li i {
+  color: #2563eb;
+}
+
+/* ===== SECTION TITLES ===== */
+
+.template4 .section-title {
+  text-align: center;
+  font-size: 22px;
+  margin: 40px 0 6px;
+  font-weight: 600;
+  color: #0f172a;
+  position: relative;
+}
+
+/* Elegant underline */
+/* .template4 .section-title::after {
+  content: "";
+  width: 60px;
+  height: 2px;
+  background: #2563eb;
+  display: block;
+  margin: 8px auto 0;
+} */
+
+/* Center content */
+.template4 p,
+.template4 #pExperience,
+.template4 #pEducation,
+.template4 #pReference {
+  text-align: center;
+  color: #334155;
+  line-height: 1.7;
+}
+
+.template4 {
+  display: block !important;
+}
+
+/* FLEX SYSTEM KO TOD DO */
+.template4.resume-page {
+  display: block !important;
+}
+
+/* Left & Right ko full width */
+.template4 .left,
+.template4 .right {
+  width: 100% !important;
+  display: block !important;
+}
+.template4 #pTagline {
+  display: block !important;
+  visibility: visible !important;
+  min-height: 20px;
+}
