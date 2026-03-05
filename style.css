@@ -728,3 +728,696 @@ body {
   visibility: visible !important;
   min-height: 20px;
 }
+
+/* temp 6 */
+
+/* ==============================
+   TEMPLATE 6 – PREMIUM MODERN
+================================= */
+/* ==================== TEMPLATE 6 – NAME IN GRAY BOX, ADDRESS BELOW, ICONS ALIGNED ==================== */
+.template6.resume-page {
+  display: flex;
+  width: 49.625rem;
+  height: 70.125rem;
+  margin: auto;
+  background: white;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* LEFT COLUMN */
+.template6 .left {
+  width: 36%;
+  background: #ffffff;
+  padding: 30px 25px;
+  border-right: 1px solid #e5e7eb;
+}
+
+/* Gray box – only around the name */
+.template6 .profile-header {
+  background: #f3f4f6;        /* light gray */
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;         /* space before address */
+  display: inline-block;       /* shrink to fit name */
+  width: auto;
+}
+
+/* Name – smaller, inside gray box */
+.template6 #pName {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Address – below the box, not inside */
+.template6 #pAddress {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.5;
+  margin: 0 0 20px 0;
+  white-space: pre-line;
+}
+
+/* Hide profile image and extra tagline */
+.template6 .profile-img,
+.template6   #pTagline {
+  display: none;
+}
+
+/* ===== CONTACT SECTION with properly aligned icons ===== */
+.template6 .left h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 25px 0 12px 0;
+  border-bottom: 1px solid #d1d5db;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.template6 .left h3 i {
+  display: none;               /* hide heading icon (optional) */
+}
+
+/* Contact list – flex layout for perfect alignment */
+.template6 .contact-list {
+  list-style: none;            /* remove default bullets */
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+.template6 .contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;                    /* space between icon and text */
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #374151;
+}
+.template6 .contact-list li i {
+  width: 20px;                 /* fixed width for icons */
+  text-align: center;
+  color: #2563eb;              /* icon color (optional) */
+  font-size: 14px;
+}
+/* Email and phone spans remain inline */
+.template6 #pEmail,
+.template6 #pPhone,
+.template6 #pLocation {
+  display: inline;
+}
+
+/* ===== SKILLS & LANGUAGES as simple bullet lists ===== */
+.template6 #pSkills,
+.template6 #pLanguage {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 0 0 20px 0;
+}
+.template6 #pSkills li,
+.template6 #pLanguage li {
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 5px;
+  background: transparent;
+  padding: 0;
+}
+
+/* ===== RIGHT COLUMN ===== */
+.template6 .right {
+  width: 64%;
+  background: white;
+  padding: 30px 30px 30px 25px;
+}
+
+/* Section titles – clean underline, no icons */
+.template6 .right .section-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f2937;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 6px;
+  margin: 25px 0 15px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.template6 .right .section-title i {
+  display: none;
+}
+
+/* Summary paragraph */
+.template6 #pAbout {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #374151;
+  margin-bottom: 15px;
+}
+
+/* Experience & Education entries */
+.template6 #pExperience div,
+.template6 #pEducation div {
+  margin-bottom: 20px;
+}
+.template6 #pExperience strong,
+.template6 #pEducation strong {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+  display: block;
+}
+.template6 #pExperience em,
+.template6 #pEducation em {
+  font-style: normal;
+  font-size: 14px;
+  color: #2563eb;
+  display: block;
+  margin: 2px 0 8px;
+}
+.template6 #pExperience div,
+.template6 #pEducation div {
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.5;
+}
+
+/* References */
+.template6 #pReference {
+  font-size: 14px;
+  color: #374151;
+  background: #f9fafb;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+
+/* ==================== TEMPLATE 6 – PROFESSIONAL MODERN (LIGHT GRAY HEADER) ==================== */
+
+/* ==================== TEMPLATE 5 – NAME IN GRAY BOX, ADDRESS BELOW ==================== */
+.template5.resume-page {
+  display: flex;
+  width: 49.625rem;
+  height: 70.125rem;
+  margin: auto;
+  background: white;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* LEFT COLUMN */
+.template5 .left {
+  width: 36%;
+  background: #ffffff;
+  padding: 30px 25px;
+  border-right: 1px solid #e5e7eb;
+}
+
+/* Gray box – only around the name */
+.template5 .profile-header {
+  background: #f3f4f6;        /* light gray */
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;         /* space before address */
+  display: inline-block;       /* shrink to fit name */
+  width: auto;                 /* not full width */
+}
+
+/* Name – smaller, inside gray box */
+.template5 #pName {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Address – below the box, not inside */
+.template5 #pAddress {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.5;
+  margin: 0 0 20px 0;
+  white-space: pre-line;       /* allows line break as entered */
+}
+
+/* Hide profile image and extra tagline */
+.template5 .profile-img,
+.template5 #pTagline {
+  display: none;
+}
+
+/* ===== CONTACT SECTION with bullets ===== */
+.template5 .left h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 25px 0 12px 0;
+  border-bottom: 1px solid #d1d5db;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.template5 .left h3 i {
+  display: none;               /* hide icon */
+}
+
+/* Contact list – disc bullets */
+.template5 .contact-list {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 0 0 20px 0;
+  color: #374151;
+}
+.template5 .contact-list li {
+  font-size: 14px;
+  margin-bottom: 6px;
+  padding-left: 0;
+}
+.template5 .contact-list li i {
+  display: none;               /* hide icons */
+}
+/* Ensure email and phone appear as normal text */
+.template5 #pEmail,
+.template5 #pPhone {
+  display: inline;
+}
+
+/* ===== SKILLS & LANGUAGES as simple bullet lists ===== */
+.template5 #pSkills,
+.template5 #pLanguage {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 0 0 20px 0;
+}
+.template5 #pSkills li,
+.template5 #pLanguage li {
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 5px;
+  background: transparent;     /* no background */
+  padding: 0;
+}
+
+/* ===== RIGHT COLUMN ===== */
+.template5 .right {
+  width: 64%;
+  background: white;
+  padding: 30px 30px 30px 25px;
+}
+
+/* Section titles – clean underline, no icons */
+.template5 .right .section-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f2937;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 6px;
+  margin: 25px 0 15px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.template5 .right .section-title i {
+  display: none;
+}
+
+/* Summary paragraph */
+.template5 #pAbout {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #374151;
+  margin-bottom: 15px;
+}
+
+/* Experience & Education entries */
+.template5 #pExperience div,
+.template5 #pEducation div {
+  margin-bottom: 20px;
+}
+.template5 #pExperience strong,
+.template5 #pEducation strong {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+  display: block;
+}
+.template5 #pExperience em,
+.template5 #pEducation em {
+  font-style: normal;
+  font-size: 14px;
+  color: #2563eb;
+  display: block;
+  margin: 2px 0 8px;
+}
+.template5 #pExperience div,
+.template5 #pEducation div {
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.5;
+}
+
+/* References */
+.template5 #pReference {
+  font-size: 14px;
+  color: #374151;
+  background: #f9fafb;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================== TEMPLATE 7 – PROFESSIONAL MODERN (LIGHT GRAY HEADER) ==================== */
+.template7.resume-page {
+  display: block;
+  /* width: 49.625rem; */
+  min-height: 70.125rem;
+  margin: auto;
+  background: #ffffff;
+  font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+  padding: 40px 45px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+}
+
+/* ===== HEADER WITH LIGHT GRAY BOX ===== */
+.template7 .profile-header {
+  background: #f3f4f6;          /* light gray background */
+  padding: 25px 30px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+/* Name – left side */
+.template7 #pName {
+  font-size: 36px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+/* Right-side contact info */
+.template7 .header-contact {
+  text-align: right;
+  font-size: 15px;
+  color: #374151;
+}
+
+.template7 .header-contact div {
+  margin-bottom: 4px;
+}
+
+.template7 .header-contact i {
+  width: 20px;
+  color: #2563eb;
+  margin-right: 6px;
+}
+
+/* Tagline (if any) – shown below name or in header? We'll put it in a separate line under name */
+.template7 #pTagline {
+  font-size: 18px;
+  font-weight: 400;
+  color: #4b5563;
+  margin-top: 6px;
+  margin-bottom: 0;
+}
+
+/* Hide the old left column, right column structure – we rebuild everything inside .left and .right as blocks */
+.template7 .left, .template7 .right {
+  width: 100%;
+  background: transparent;
+  padding: 0;
+  color: #1f2937;
+}
+
+/* Hide profile image, old contact list, and old section icons */
+.template7 .profile-img,
+.template7 .left h3 i,
+.template7 .right .section-title i,
+.template7 .contact-list {
+  display: none;
+}
+
+/* ===== SECTION TITLES ===== */
+.template7 .right .section-title,
+.template7 .left h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #111827;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 8px;
+  margin: 30px 0 18px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ===== SKILLS AS TAGS ===== */
+.template7 #pSkills {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0 20px;
+}
+.template7 #pSkills li {
+  background: #f3f4f6;
+  color: #1f2937;
+  padding: 6px 16px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid #e5e7eb;
+}
+
+/* ===== LANGUAGES (if needed) – same style ===== */
+.template7 #pLanguage {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.template7 #pLanguage li {
+  background: #f3f4f6;
+  padding: 6px 16px;
+  border-radius: 30px;
+  font-size: 14px;
+  border: 1px solid #e5e7eb;
+}
+
+/* ===== SUMMARY / PARAGRAPH ===== */
+.template7 #pAbout {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #374151;
+  margin-bottom: 15px;
+}
+
+/* ===== EXPERIENCE & EDUCATION ENTRIES ===== */
+.template7 #pExperience div,
+.template7 #pEducation div {
+  margin-bottom: 28px;
+  padding-left: 0;
+  border-left: none;
+}
+
+.template7 #pExperience strong,
+.template7 #pEducation strong {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.template7 #pExperience em,
+.template7 #pEducation em {
+  font-style: normal;
+  font-weight: 500;
+  color: #2563eb;
+  font-size: 15px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.template7 #pExperience div,
+.template7 #pEducation div {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #374151;
+}
+
+/* Bullet points for descriptions – if entered with dashes or new lines, we add a bullet style */
+.template7 #pExperience div p,
+.template7 #pExperience div {
+  position: relative;
+  padding-left: 20px;
+}
+.template7 #pExperience div::before {
+  content: "•";
+  color: #2563eb;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* ===== REFERENCES ===== */
+.template7 #pReference {
+  background: #f9fafb;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+  margin-top: 10px;
+}
+
+/* ===== ADDRESS / LOCATION – we can display it in header or below ===== */
+.template7 #pAddress {
+  font-size: 15px;
+  color: #6b7280;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+/* ===== MAKE HEADER FLEXIBLE ===== */
+.template7 .profile-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.template7 .profile-header .left-part {
+  flex: 1 1 60%;
+}
+.template7 .profile-header .right-part {
+  flex: 1 1 40%;
+  text-align: right;
+}
+/* But we don't have separate divs – we need to create them in HTML or use existing elements.
+   In your HTML, the header currently contains #pName, #pTagline, #pAddress inside .profile-header.
+   We'll restructure using CSS to split them. We can use display: flex on .profile-header and wrap.
+   Let's assume we want: left side: #pName and #pTagline; right side: #pEmail, #pPhone, #pAddress.
+   But #pAddress is currently below. We'll move it to right side using order.
+*/
+
+.template7 .profile-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.template7 .profile-header > :nth-child(1) { /* #pName */
+  order: 1;
+  width: 60%;
+}
+.template7 .profile-header > :nth-child(2) { /* #pTagline */
+  order: 2;
+  width: 60%;
+}
+.template7 .profile-header > :nth-child(3) { /* #pAddress */
+  order: 4;
+  width: 40%;
+  text-align: right;
+  margin-top: 0;
+  color: #374151;
+}
+/* We need to bring email and phone into header – they are currently in .contact-list, which is hidden.
+   We'll unhide them and move them into header via absolute positioning? Better: we'll create a new structure using JavaScript, but for CSS-only, we can override.
+   Since we have #pEmail and #pPhone inside hidden list, we can display them as inline blocks in header.
+   We'll hide the list but show the spans.
+*/
+.template7 .contact-list {
+  display: contents;  /* removes the list wrapper */
+}
+.template7 .contact-list li {
+  display: contents;  /* each li becomes a non-element */
+}
+.template7 #pEmail,
+.template7 #pPhone {
+  display: inline-block;
+  order: 3;            /* will appear after tagline */
+  width: auto;
+  margin-right: 15px;
+}
+.template7 #pEmail {
+  order: 3;
+}
+.template7 #pPhone {
+  order: 3;
+}
+/* To place them on the right, we need to wrap them in a container. Since we can't, we'll use flex order and text-align.
+   This is getting complex. Simpler: we'll rely on the user to put email/phone in the address field or use a different approach.
+   Given the scope, we'll provide a clean header that shows name left, and contact (email, phone, address) right in a column.
+   We'll modify the HTML structure slightly? But we are only providing CSS. We'll assume the HTML has #pEmail and #pPhone as separate elements outside the list? In your HTML they are inside list. We can override with CSS to make them appear in header.
+   I'll provide a robust solution: use CSS grid on .profile-header to arrange items.
+*/
+
+/* Robust header layout using grid */
+.template7 .profile-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 15px;
+}
+.template7 #pName {
+  grid-column: 1;
+  grid-row: 1;
+}
+.template7 #pTagline {
+  grid-column: 1;
+  grid-row: 1;
+}
+.template7 #pAddress {
+  grid-column: 4;
+  grid-row: 1;
+  text-align: right;
+  margin: 0;
+}
+.template7 #pEmail {
+  grid-column: 1;
+  grid-row: 1;
+  text-align: right;
+  /* display: block; */
+}
+.template7 #pPhone {
+  grid-column: 1;
+  grid-row: 1;
+  text-align: left;
+  display: block;
+}
+/* Hide the old contact list icons */
+.template7 .contact-list i {
+  display: none;
+}
+.template7 .contact-list {
+  display: contents;
+}
+.template7 .contact-list li {
+  display: contents;
+}
+/* This will place email and phone in the right column. Good! */

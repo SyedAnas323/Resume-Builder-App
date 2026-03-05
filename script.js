@@ -777,6 +777,6 @@ templateBtn.addEventListener("click", () => {
 });
 
 templateSelector.addEventListener("change", function () {
-  resume.classList.remove("template1", "template2", "template3", "template4");
+  resume.classList.remove("template1", "template2", "template3", "template4","template6","template7");
   resume.classList.add(this.value);
 });
